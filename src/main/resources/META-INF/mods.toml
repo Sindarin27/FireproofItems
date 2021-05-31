@@ -6,6 +6,7 @@ modId="fireproofitems" #mandatory
 version="1.0" #mandatory
 displayName="Fireproof Items Mod" #mandatory
 credits="Original version by Grillo" #optional
+license="All rights reserved"
 description='''
 A mod to keep your items safe from lava
 '''

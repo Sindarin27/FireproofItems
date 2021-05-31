@@ -22,7 +22,7 @@ public class FireProofItemsMod {
     @SubscribeEvent
     public void onEntitySpawn(EntityJoinWorldEvent event) {
         if (event.getEntity() instanceof ItemEntity) {
-            if (ItemTags.getCollection().getOrCreate(itemTag).contains(((ItemEntity) event.getEntity()).getItem().getItem())) {
+            if (ItemTags.getAllTags().getTagOrEmpty(itemTag).contains(((ItemEntity) event.getEntity()).getItem().getItem())) {
                 event.getEntity().setInvulnerable(true);
             }
         }
