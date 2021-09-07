@@ -1,8 +1,8 @@
-package com.sindarin.fireproofitems;
+package sindarin.fireproofitems;
 
-import net.minecraft.entity.item.ItemEntity;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
