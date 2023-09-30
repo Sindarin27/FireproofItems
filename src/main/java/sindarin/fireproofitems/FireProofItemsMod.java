@@ -3,12 +3,12 @@ package sindarin.fireproofitems;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 @Mod(FireProofItemsMod.MOD_ID)
 public class FireProofItemsMod {
@@ -24,9 +24,8 @@ public class FireProofItemsMod {
     @SubscribeEvent
     public void onEntitySpawn(EntityJoinWorldEvent event) {
         if (event.getEntity() instanceof ItemEntity) {
-            if (ItemTags.getAllTags().getTagOrEmpty(itemTag).contains(((ItemEntity) event.getEntity()).getItem().getItem()) == ModConfig.SERVER.isWhitelist.get()) {
-                event.getEntity().setInvulnerable(true);
-            }
+            Item item = ((ItemEntity) event.getEntity()).getItem().getItem();
+            item.isFireResistant = ItemTags.getAllTags().getTagOrEmpty(itemTag).contains(item) == ModConfig.SERVER.isWhitelist.get();
         }
     }
 }
